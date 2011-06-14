@@ -80,7 +80,7 @@ music = elf.LoadSound("resources/sound/menu.ogg")
 sound_source = elf.PlaySound(music, 0.5)
 
 -- Broken ;_;
---elf.LoadScene("resources/menu.pak")
+elf.LoadScene("resources/menu.dae")
 
 while elf.Run() == true do
    elf.SetLabelText(lab, "FPS: " .. elf.GetFps())

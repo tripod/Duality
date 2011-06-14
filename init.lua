@@ -73,6 +73,12 @@ elf.SetGuiObjectScript(qb, exscr)
 
 elf.AddGuiObject(gui, qb)
 
+
+-- load some music
+music = elf.LoadSound("resources/menu.ogg")
+sound_source = elf.PlaySound(music, 1.0)
+
+
 while elf.Run() == true do
    elf.SetLabelText(lab, "FPS: " .. elf.GetFps())
 end

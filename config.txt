@@ -1,5 +1,5 @@
 window_size 1280 800
-fullscreen TRUE
+fullscreen FALSE
 texture_compress TRUE
 texture_anisotropy 16.0
 shadow_map_size 1024

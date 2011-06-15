@@ -28,6 +28,10 @@ while elf.Run() == true do
 	    elf.MoveActorLocal(cam, 12.0, 0.0, 0.0)
 	end
 	
+	if elf.GetKeyState(elf.KEY_ESC) == elf.PRESSED then
+	   elf.Quit()
+	end
+	
 	force = elf.GetMouseForce()
 	elf.RotateActor(cam, 0.0, 0.0, -force.x* 5.0)
 	elf.RotateActorLocal(cam, -force.y*10.0, 0.0, 0.0)

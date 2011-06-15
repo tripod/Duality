@@ -29,7 +29,9 @@ while elf.Run() == true do
 	end
 	
 	if elf.GetKeyState(elf.KEY_ESC) == elf.PRESSED then
-	   elf.Quit()
+	   elf.HideMouse( false)
+	   elf.SetGuiObjectVisible(maingui, true )
+	   elf.SetGui(maingui)
 	end
 	
 	force = elf.GetMouseForce()

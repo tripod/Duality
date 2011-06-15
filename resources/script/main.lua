@@ -4,6 +4,9 @@ maingui = elf.CreateGui()
 music = elf.LoadSound("resources/sound/menu.ogg")
 sound_source = elf.PlaySound(music, 0.5)
 
+menu_click = elf.LoadSound("resources/sound/menu_click.ogg")
+
+
 -- add a label
 font = elf.CreateFontFromFile("resources/DejaVuSans.ttf", 12)
 
@@ -58,6 +61,8 @@ elf.SetButtonOffTexture(ab, abtexoff)
 elf.SetButtonOverTexture(ab, abtexover)
 elf.SetButtonOnTexture(ab, abtexon)
 elf.SetGuiObjectPosition(ab, 50, elf.GetWindowHeight() - 250)
+
+
 elf.AddGuiObject(maingui, ab)
 
 -- add quit about button
@@ -71,9 +76,6 @@ elf.SetButtonOverTexture(qb, qbtexover)
 elf.SetButtonOnTexture(qb, qbtexon)
 elf.SetGuiObjectPosition(qb, 50, elf.GetWindowHeight() - 200)
 
-exscr = elf.CreateScript("Exit")
-elf.SetScriptText(exscr, "elf.Quit()")
-elf.SetGuiObjectScript(qb, exscr)
 
 elf.AddGuiObject(maingui, qb)
 

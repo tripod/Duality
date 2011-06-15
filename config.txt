@@ -1,6 +1,6 @@
-window_size 1280 800
+window_size 1200 800
 fullscreen FALSE
-texture_compress TRUE
+texture_compress FALSE
 texture_anisotropy 16.0
 shadow_map_size 1024
 log duality.log

@@ -3,27 +3,26 @@ maingui = elf.CreateGui()
 --load some music
 music = elf.LoadSound("resources/sound/menu.ogg")
 sound_source = elf.PlaySound(music, 0.5)
-
 menu_click = elf.LoadSound("resources/sound/menu_click.ogg")
 
 
--- add a label
-font = elf.CreateFontFromFile("resources/DejaVuSans.ttf", 12)
-
-lab = elf.CreateLabel("FPSLabel")
-elf.SetLabelFont(lab, font)
-elf.SetLabelText(lab, "Loading ...")
-elf.SetGuiObjectPosition(lab, 10, 10)
-elf.AddGuiObject(maingui, lab)
-
-
--- -- create the elf logo
+-- Create background
 elflogotex = elf.CreateTextureFromFile("resources/menu/background.jpg")
--- 
-pic = elf.CreatePicture("ElfLogo")
+-- -- 
+pic = elf.CreatePicture("Background")
 elf.SetPictureTexture(pic, elflogotex)
 elf.SetGuiObjectPosition(pic, 0 , 0 )
 elf.AddGuiObject(maingui, pic)
+
+
+-- add a label
+font = elf.CreateFontFromFile("resources/DejaVuSans.ttf", 20)
+
+lab = elf.CreateLabel("FPSLabel")
+elf.SetLabelFont(lab, font)
+elf.SetLabelText(lab, "FPS: ")
+elf.SetGuiObjectPosition(lab, elf.GetWindowWidth() - 100 , 10)
+elf.AddGuiObject(maingui, lab)
 
 
 -- add new game button
@@ -61,6 +60,11 @@ elf.SetButtonOffTexture(ab, abtexoff)
 elf.SetButtonOverTexture(ab, abtexover)
 elf.SetButtonOnTexture(ab, abtexon)
 elf.SetGuiObjectPosition(ab, 50, elf.GetWindowHeight() - 250)
+
+
+ascr = elf.CreateScript("AboutScreen")
+elf.SetScriptText(ascr, "elf.SetGui(aboutgui); elf.PlaySound(menu_click, 0.5)")
+elf.SetGuiObjectScript(ab, ascr)
 
 
 elf.AddGuiObject(maingui, ab)

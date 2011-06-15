@@ -1,11 +1,11 @@
 -- I dont know how to append to a  string
-abouttext = "Duality, a FPS style game, powered by the blendelf game engine.\n\nProgramming - Mark Hahl\nGraphics - James Grey\n"
+abouttext = "Duality, a FPS style game, powered by the blendelf game engine.\n\nProgramming - Mark Hahl\nGraphics - James Gray\n"
 
 aboutgui = elf.CreateGui() 
 
 -- textures for buttons
 
-abl = elf.CreateLabel("Anout us")
+abl = elf.CreateLabel("About us")
 elf.SetLabelFont(abl, font)
 elf.SetLabelText(abl, abouttext )
 elf.SetGuiObjectPosition(abl, 90 , 200)

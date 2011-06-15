@@ -77,4 +77,4 @@ elf.SetGuiObjectScript(qb, exscr)
 
 elf.AddGuiObject(maingui, qb)
 
-elf.SetGui(maingui)
+

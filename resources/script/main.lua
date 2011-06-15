@@ -47,6 +47,7 @@ elf.SetButtonOffTexture(ob, obtexoff)
 elf.SetButtonOverTexture(ob, obtexover)
 elf.SetButtonOnTexture(ob, obtexon)
 elf.SetGuiObjectPosition(ob, 50, elf.GetWindowHeight() - 300)
+CallBack.Create(ob, "OptionsClick", "elf.PlaySound(menu_click, 0.5)")
 elf.AddGuiObject(maingui, ob)
 
 
@@ -61,12 +62,8 @@ elf.SetButtonOverTexture(ab, abtexover)
 elf.SetButtonOnTexture(ab, abtexon)
 elf.SetGuiObjectPosition(ab, 50, elf.GetWindowHeight() - 250)
 
--- Use a script to check for user button presses becuase it doesnt work otherwise
-ascr = elf.CreateScript("AboutScreen")
-elf.SetScriptText(ascr, "elf.SetGui(aboutgui); elf.PlaySound(menu_click, 0.5)")
-elf.SetGuiObjectScript(ab, ascr)
-
-
+-- Create a callback for the button push
+CallBack.Create(ab, "AboutScript", "elf.SetGui(aboutgui); elf.PlaySound(menu_click, 0.5)")
 elf.AddGuiObject(maingui, ab)
 
 -- add quit about button
@@ -79,7 +76,7 @@ elf.SetButtonOffTexture(qb, qbtexoff)
 elf.SetButtonOverTexture(qb, qbtexover)
 elf.SetButtonOnTexture(qb, qbtexon)
 elf.SetGuiObjectPosition(qb, 50, elf.GetWindowHeight() - 200)
-
+CallBack.Create(qb, "Exit", "elf.Quit()")
 
 elf.AddGuiObject(maingui, qb)
 

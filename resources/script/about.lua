@@ -22,9 +22,12 @@ elf.SetButtonOverTexture(bb,bbtexover)
 elf.SetButtonOnTexture(bb, bbtexon)
 elf.SetGuiObjectPosition(bb, 50, elf.GetWindowHeight() - 200)
 
+-- This replaces the below commented out code
+CallBack.Create(bb, "BackScript", "elf.SetGui(maingui);elf.PlaySound(menu_click, 0.5)")
+
 -- Use a script to check for user button presses becuase it doesnt work otherwise
-bscr = elf.CreateScript("Back")
-elf.SetScriptText(bscr, "elf.SetGui(maingui);elf.PlaySound(menu_click, 0.5)")
-elf.SetGuiObjectScript(bb, bscr)
+-- bscr = elf.CreateScript("Back")
+-- elf.SetScriptText(bscr, "elf.SetGui(maingui);elf.PlaySound(menu_click, 0.5)")
+-- elf.SetGuiObjectScript(bb, bscr)
 
 elf.AddGuiObject(aboutgui, bb)

@@ -7,7 +7,7 @@ menu_click = elf.LoadSound("resources/sound/menu_click.ogg")
 
 
 -- Create background
-elflogotex = elf.CreateTextureFromFile("resources/menu/background.jpg")
+elflogotex = elf.CreateTextureFromFile("resources/menu/background.png")
 -- -- 
 pic = elf.CreatePicture("Background")
 elf.SetPictureTexture(pic, elflogotex)
@@ -35,6 +35,7 @@ elf.SetButtonOffTexture(nb, nbtexoff)
 elf.SetButtonOverTexture(nb, nbtexover)
 elf.SetButtonOnTexture(nb, nbtexon)
 elf.SetGuiObjectPosition(nb, 50, elf.GetWindowHeight() - 350)
+CallBack.Create(nb, "NewsClick", "Game.Load('resources/levels/level1.pak') ; elf.PlaySound(menu_click, 0.5)")
 elf.AddGuiObject(maingui, nb)
 
 -- add new options button

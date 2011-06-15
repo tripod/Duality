@@ -19,4 +19,14 @@ function CallBack.Create(button, name, code)
     
 end
 
--- CallBack.Create(bb, "BackScript", "elf.SetGui(maingui);elf.PlaySound(menu_click, 0.5)")
+Game = {}
+function Game.Load(level_pak)
+
+ level_loaded = true
+ elf.HideMouse( true )
+ elf.SetGuiObjectVisible(maingui, false )
+  
+ scene = elf.LoadScene(level_pak)
+ cam = elf.GetSceneActiveCamera(scene)
+   
+end

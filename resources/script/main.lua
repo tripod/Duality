@@ -61,7 +61,7 @@ elf.SetButtonOverTexture(ab, abtexover)
 elf.SetButtonOnTexture(ab, abtexon)
 elf.SetGuiObjectPosition(ab, 50, elf.GetWindowHeight() - 250)
 
-
+-- Use a script to check for user button presses becuase it doesnt work otherwise
 ascr = elf.CreateScript("AboutScreen")
 elf.SetScriptText(ascr, "elf.SetGui(aboutgui); elf.PlaySound(menu_click, 0.5)")
 elf.SetGuiObjectScript(ab, ascr)

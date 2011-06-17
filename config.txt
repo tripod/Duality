@@ -1,7 +1,9 @@
-window_size 1200 800
+windowSize 1024 800
 fullscreen FALSE
-texture_compress FALSE
-texture_anisotropy 16.0
-shadow_map_size 1024
-log duality.log
- 
+multisamples 4
+textureAnisotropy 2
+textureCompress FALSE
+shadowMapSize 2048
+
+bloom 0.75999999046326
+ssao 0

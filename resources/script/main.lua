@@ -1,84 +1,71 @@
-maingui = elf.CreateGui()
+-- Main Gui for the menu
+maingui = CreateGui()
 
---load some music
-music = elf.LoadSound("resources/sound/menu.ogg")
-sound_source = elf.PlaySound(music, 0.5)
-menu_click = elf.LoadSound("resources/sound/menu_click.ogg")
+-- Blank GUI For the game
+blankgui = CreateGui()
+
+-- Main Menu Music
+music = LoadSound("resources/sound/menu.ogg")
+sound_source = PlaySound(music, 0.5)
+menu_click = LoadSound("resources/sound/menu_click.ogg")
 
 
 -- Create background
-elflogotex = elf.CreateTextureFromFile("resources/menu/background.png")
--- -- 
-pic = elf.CreatePicture("Background")
-elf.SetPictureTexture(pic, elflogotex)
-elf.SetGuiObjectPosition(pic, 0 , 0 )
-elf.AddGuiObject(maingui, pic)
+elflogotex = CreateTextureFromFile("BackGround", "resources/menu/background.png")
+CreatePicture(maingui, "BackGround", 0, 0, "resources/menu/background.png")
 
-
--- add a label
-font = elf.CreateFontFromFile("resources/DejaVuSans.ttf", 20)
-
-lab = elf.CreateLabel("FPSLabel")
-elf.SetLabelFont(lab, font)
-elf.SetLabelText(lab, "FPS: ")
-elf.SetGuiObjectPosition(lab, elf.GetWindowWidth() - 100 , 10)
-elf.AddGuiObject(maingui, lab)
-
+-- Create a font
+font = CreateFontFromFile("resources/DejaVuSans.ttf", 20)
+fpslab = CreateLabel(maingui, "FPSLabel", GetWindowWidth() - 100, 10, "FPS: ")
+SetLabelFont(fpslab, font)
 
 -- add new game button
-nbtexoff = elf.CreateTextureFromFile("resources/menu/new_off.png")
-nbtexover = elf.CreateTextureFromFile("resources/menu/new_hover.png")
-nbtexon = elf.CreateTextureFromFile("resources/menu/new_off.png")
+nbtexoff = CreateTextureFromFile("NewButtonOff", "resources/menu/new_off.png")
+nbtexover = CreateTextureFromFile("NewButtonHover", "resources/menu/new_hover.png")
+nbtexon = CreateTextureFromFile("NewButtonClick", "resources/menu/new_off.png")
 
-nb = elf.CreateButton("NewButton")
-elf.SetButtonOffTexture(nb, nbtexoff)
-elf.SetButtonOverTexture(nb, nbtexover)
-elf.SetButtonOnTexture(nb, nbtexon)
-elf.SetGuiObjectPosition(nb, 50, elf.GetWindowHeight() - 350)
-CallBack.Create(nb, "NewsClick", "Game.Load('resources/levels/level1.pak') ; elf.PlaySound(menu_click, 0.5)")
-elf.AddGuiObject(maingui, nb)
+newButton = CreateButton(maingui, "NewButton", 50, GetWindowHeight() - 350, 250, 32, "")
+SetButtonOffTexture(newButton, nbtexoff)
+SetButtonOverTexture(newButton, nbtexover)
+SetButtonOnTexture(newButton, nbtexon)
+CallBack.Create(newButton, "NewClick", "Game.Load('resources/levels/level1.pak') \n PlaySound(menu_click, 0.5)")
 
 -- add new options button
-obtexoff = elf.CreateTextureFromFile("resources/menu/options_off.png")
-obtexover = elf.CreateTextureFromFile("resources/menu/options_hover.png")
-obtexon = elf.CreateTextureFromFile("resources/menu/options_off.png")
+obtexoff = CreateTextureFromFile("OptionsButtonOff", "resources/menu/options_off.png")
+obtexover = CreateTextureFromFile("OptionsButtonHover", "resources/menu/options_hover.png")
+obtexon = CreateTextureFromFile("OptionsButtonClick","resources/menu/options_off.png")
 
-ob = elf.CreateButton("OptionsButton")
-elf.SetButtonOffTexture(ob, obtexoff)
-elf.SetButtonOverTexture(ob, obtexover)
-elf.SetButtonOnTexture(ob, obtexon)
-elf.SetGuiObjectPosition(ob, 50, elf.GetWindowHeight() - 300)
-CallBack.Create(ob, "OptionsClick", "elf.PlaySound(menu_click, 0.5)")
-elf.AddGuiObject(maingui, ob)
+optionsButton = CreateButton(maingui, "OptionsButton", 50, GetWindowHeight() - 300, 250, 32, "")
+SetButtonOffTexture(optionsButton, obtexoff)
+SetButtonOverTexture(optionsButton, obtexover)
+SetButtonOnTexture(optionsButton, obtexon)
+CallBack.Create(optionsButton, "OptionsClick", "PlaySound(menu_click, 0.5)")
 
+-- Textures of buttion
+abtexoff = CreateTextureFromFile("AboutButtonOff", "resources/menu/about_off.png")
+abtexover = CreateTextureFromFile("AboutButtonHover","resources/menu/about_hover.png")
+abtexon = CreateTextureFromFile("AboutButtonClicked","resources/menu/about_off.png")
 
--- add new about button
-abtexoff = elf.CreateTextureFromFile("resources/menu/about_off.png")
-abtexover = elf.CreateTextureFromFile("resources/menu/about_hover.png")
-abtexon = elf.CreateTextureFromFile("resources/menu/about_off.png")
-
-ab = elf.CreateButton("AboutButton")
-elf.SetButtonOffTexture(ab, abtexoff)
-elf.SetButtonOverTexture(ab, abtexover)
-elf.SetButtonOnTexture(ab, abtexon)
-elf.SetGuiObjectPosition(ab, 50, elf.GetWindowHeight() - 250)
+-- About Buttion
+aboutButton = CreateButton(maingui, "AboutButton", 50, GetWindowHeight() - 250, 250, 32, "")
+SetButtonOffTexture(aboutButton, abtexoff)
+SetButtonOverTexture(aboutButton, abtexover)
+SetButtonOnTexture(aboutButton, abtexon)
+SetGuiObjectPosition(aboutButton, 50, GetWindowHeight() - 250)
 
 -- Create a callback for the button push
-CallBack.Create(ab, "AboutScript", "elf.SetGui(aboutgui); elf.PlaySound(menu_click, 0.5)")
-elf.AddGuiObject(maingui, ab)
+CallBack.Create(aboutButton, "AboutScript", "SetGui(aboutgui) \n PlaySound(menu_click, 0.5)")
 
 -- add quit about button
-qbtexoff = elf.CreateTextureFromFile("resources/menu/quit_off.png")
-qbtexover = elf.CreateTextureFromFile("resources/menu/quit_hover.png")
-qbtexon = elf.CreateTextureFromFile("resources/menu/quit_off.png")
+qbtexoff = CreateTextureFromFile("QuitButtonOff","resources/menu/quit_off.png")
+qbtexover = CreateTextureFromFile("QuitButtonHover","resources/menu/quit_hover.png")
+qbtexon = CreateTextureFromFile("QuitButtonClicked","resources/menu/quit_off.png")
 
-qb = elf.CreateButton("QuitButton")
-elf.SetButtonOffTexture(qb, qbtexoff)
-elf.SetButtonOverTexture(qb, qbtexover)
-elf.SetButtonOnTexture(qb, qbtexon)
-elf.SetGuiObjectPosition(qb, 50, elf.GetWindowHeight() - 200)
-CallBack.Create(qb, "Exit", "elf.Quit()")
-
-elf.AddGuiObject(maingui, qb)
+quitButton = CreateButton(maingui, "QuitButton", 50, GetWindowHeight() - 200, 250, 32, "")
+SetButtonOffTexture(quitButton, qbtexoff)
+SetButtonOverTexture(quitButton, qbtexover)
+SetButtonOnTexture(quitButton, qbtexon)
+SetGuiObjectPosition(quitButton, 50, GetWindowHeight() - 200)
+CallBack.Create(quitButton, "Exit", "Quit()")
 
 

@@ -1,33 +1,18 @@
 -- I dont know how to append to a  string
-abouttext = "Duality, a FPS style game, powered by the blendelf game engine.\n\nProgramming - Mark Hahl\nGraphics - James Gray\n"
+abouttext = "Duality, a FPS style game, powered by the blendelf game engine.\n\nProgramming - Mark 'Ling' Hahl\nGraphics - James 'tripod' Gray\nMusic - Mick 'mickrip' Rippon"
+aboutgui = CreateGui() 
 
-aboutgui = elf.CreateGui() 
+-- About label and font
+abl = CreateLabel(aboutgui, "AboutLabel", 90, 200, abouttext)
+SetLabelFont(abl, font)
 
--- textures for buttons
+-- Add a new Back Buttion
+bbtexoff = CreateTextureFromFile("BackButtonOn","resources/menu/back_off.png")
+bbtexover = CreateTextureFromFile("BackButtonHover", "resources/menu/back_hover.png")
+bbtexon = CreateTextureFromFile("BackButtonClick", "resources/menu/back_off.png")
 
-abl = elf.CreateLabel("About us")
-elf.SetLabelFont(abl, font)
-elf.SetLabelText(abl, abouttext )
-elf.SetGuiObjectPosition(abl, 90 , 200)
-elf.AddGuiObject(aboutgui, abl)
-
--- add new game button
-bbtexoff = elf.CreateTextureFromFile("resources/menu/back_off.png")
-bbtexover = elf.CreateTextureFromFile("resources/menu/back_hover.png")
-bbtexon = elf.CreateTextureFromFile("resources/menu/back_off.png")
-
-bb = elf.CreateButton("BackButton")
-elf.SetButtonOffTexture(bb, bbtexoff)
-elf.SetButtonOverTexture(bb,bbtexover)
-elf.SetButtonOnTexture(bb, bbtexon)
-elf.SetGuiObjectPosition(bb, 50, elf.GetWindowHeight() - 200)
-
--- This replaces the below commented out code
-CallBack.Create(bb, "BackScript", "elf.SetGui(maingui);elf.PlaySound(menu_click, 0.5)")
-
--- Use a script to check for user button presses becuase it doesnt work otherwise
--- bscr = elf.CreateScript("Back")
--- elf.SetScriptText(bscr, "elf.SetGui(maingui);elf.PlaySound(menu_click, 0.5)")
--- elf.SetGuiObjectScript(bb, bscr)
-
-elf.AddGuiObject(aboutgui, bb)
+backButton = CreateButton(aboutgui, "AboutButton", 50, GetWindowHeight() - 200, 250, 32, "")
+SetButtonOffTexture(backButton, bbtexoff)
+SetButtonOverTexture(backButton,bbtexover)
+SetButtonOnTexture(backButton, bbtexon)
+CallBack.Create(backButton, "BackScript", "SetGui(maingui);PlaySound(menu_click, 0.5)")

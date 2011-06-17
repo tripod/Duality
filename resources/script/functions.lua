@@ -8,25 +8,29 @@ CallBack = {}
 
 function CallBack.Create(button, name, code)
   
---     self.button = button
---     self.name = name
---     self.code = code
+--     sbutton = button
+--     sname = name
+--     scode = code
   
   
-    script = elf.CreateScript(name)
-    elf.SetScriptText(script, code)
-    elf.SetGuiObjectScript(button, script)
+    script = CreateScript(name)
+    SetScriptText(script, code)
+    SetGuiObjectScript(button, script)
     
 end
 
 Game = {}
 function Game.Load(level_pak)
+   
+  scene = LoadScene(level_pak)
+  cam = GetSceneActiveCamera(scene)
+  
+  SetActorPhysics(cam, true)
+  SetActorShape(cam, BOX)
 
- level_loaded = true
- elf.HideMouse( true )
- elf.SetGuiObjectVisible(maingui, false )
-   
- scene = elf.LoadScene(level_pak)
- cam = elf.GetSceneActiveCamera(scene)
-   
+  level_loaded = true
+  HideMouse( true )
+  SetGuiObjectVisible(maingui, false )
+  SetGui(blankgui)
+  
 end

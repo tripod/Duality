@@ -42,8 +42,8 @@ while Run() == true do
           
      --take a screenshot on F5
      if GetKeyState(KEY_F5) == DOWN then
-         if SaveScreenShot("ScreenShot.png") == true then
-             print("INIT.LUA: Screen shot saved to " .. GetCurrentDirectory() .. "/Screenshot.png")
+         if SaveScreenShot("screenshots/shot-" .. RandomInt() ..  " .png") == true then
+             print("INIT.LUA: Took Screenshot ")
          end
      end
      

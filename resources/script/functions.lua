@@ -26,8 +26,12 @@ function Game.Load(level_pak)
   cam = GetSceneActiveCamera(scene)
   
   SetActorPhysics(cam, true)
-  SetActorShape(cam, BOX)
-
+  SetActorShape(cam ,BOX)
+  
+  print("......... Entity Information............")
+  print(GetSceneEntityCount(scene))
+  print(GetSceneEntity(scene, "Plane") )
+  
   level_loaded = true
   HideMouse( true )
   SetGuiObjectVisible(maingui, false )

@@ -1,5 +1,5 @@
-windowSize 1920 1080
-fullscreen TRUE
+windowSize 1200 800
+fullscreen FALSE
 multisamples 4
 textureAnisotropy 2
 textureCompress FALSE

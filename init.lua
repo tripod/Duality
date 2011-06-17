@@ -37,6 +37,7 @@ while Run() == true do
 	force = GetMouseForce()
 	RotateActor(cam, 0.0, 0.0, -force.x* 5.0)
 	RotateActorLocal(cam, -force.y*10.0, 0.0, 0.0)
+	
        
      end
           

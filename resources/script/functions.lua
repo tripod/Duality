@@ -7,11 +7,8 @@
 CallBack = {}
 
 function CallBack.Create(button, name, code)
-  
---     sbutton = button
---     sname = name
---     scode = code
-  
+
+    print("In function CallBack.Create()")
   
     script = CreateScript(name)
     SetScriptText(script, code)
@@ -21,7 +18,9 @@ end
 
 Game = {}
 function Game.Load(level_pak)
-   
+  
+  print("In function Game.Load()")
+  
   scene = LoadScene(level_pak)
   cam = GetSceneActiveCamera(scene)
   
@@ -31,6 +30,7 @@ function Game.Load(level_pak)
   print("......... Entity Information............")
   print(GetSceneEntityCount(scene))
   print(GetSceneEntity(scene, "Plane") )
+
   
   level_loaded = true
   HideMouse( true )

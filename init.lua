@@ -2,6 +2,29 @@ require("resources/script/functions")
 require("resources/script/main")
 require("resources/script/about")
 
+
+--read the config file looking for non-engine config
+config = io.open("config.txt","r")
+line = config:read()
+while (line ~= nil) do
+    --look for bloom settings
+    if (line:find("bloom") ~= nil) then
+        bloom = tonumber(line:sub(string.len("bloom ")))
+    else
+        bloom = 0.76
+    end
+    
+    --look for ssao settings
+    if (line:find("ssao") ~= nil) then
+        ssao = tonumber(line:sub(string.len("ssao ")))
+    else
+        ssao = 0
+    end
+    
+    line = config:read()
+end
+config:close()
+
 -- startup the main gui now
 SetGui(maingui)
 

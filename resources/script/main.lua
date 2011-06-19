@@ -39,7 +39,9 @@ optionsButton = CreateButton(maingui, "OptionsButton", 50, GetWindowHeight() - 3
 SetButtonOffTexture(optionsButton, obtexoff)
 SetButtonOverTexture(optionsButton, obtexover)
 SetButtonOnTexture(optionsButton, obtexon)
-CallBack.Create(optionsButton, "OptionsClick", "PlaySound(menu_click, 0.5)")
+
+optScr = CreateScriptFromFile("OptionsScript","resources/script/options.lua")
+SetGuiObjectScript(optionsButton,optScr)
 
 -- Textures of buttion
 abtexoff = CreateTextureFromFile("AboutButtonOff", "resources/menu/about_off.png")
@@ -53,8 +55,11 @@ SetButtonOverTexture(aboutButton, abtexover)
 SetButtonOnTexture(aboutButton, abtexon)
 SetGuiObjectPosition(aboutButton, 50, GetWindowHeight() - 250)
 
+abtScr = CreateScriptFromFile("About","resources/script/about.lua")
+SetGuiObjectScript(aboutButton,abtScr)
+
 -- Create a callback for the button push
-CallBack.Create(aboutButton, "AboutScript", "SetGui(aboutgui) \n PlaySound(menu_click, 0.5)")
+--CallBack.Create(aboutButton, "AboutScript", "SetGui(aboutgui) \n PlaySound(menu_click, 0.5)")
 
 -- add quit about button
 qbtexoff = CreateTextureFromFile("QuitButtonOff","resources/menu/quit_off.png")

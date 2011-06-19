@@ -1,3 +1,5 @@
+PlaySound(menu_click, 0.5)
+
 -- I dont know how to append to a  string
 abouttext = "Duality, a FPS style game, powered by the blendelf game engine.\n\nProgramming - Mark 'Ling' Hahl\nGraphics - James 'tripod' Gray\nMusic - Mick 'mickrip' Rippon"
 aboutgui = CreateGui() 
@@ -16,3 +18,5 @@ SetButtonOffTexture(backButton, bbtexoff)
 SetButtonOverTexture(backButton,bbtexover)
 SetButtonOnTexture(backButton, bbtexon)
 CallBack.Create(backButton, "BackScript", "SetGui(maingui);PlaySound(menu_click, 0.5)")
+
+SetGui(aboutgui)

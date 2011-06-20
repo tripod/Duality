@@ -51,12 +51,12 @@ local resLabelX = CreateLabel(optionsGui,"resLabelX",50, 200, "Resolution: ")
 
 
 -- Create a text box showign the res for X
-resXtxt = CreateTextField(optionsGui,"resXtxt",185, 200, 50, GetWindowWidth())
+resXtxt = CreateTextField(optionsGui,"resXtxt",175, 210, 50, GetWindowWidth())
 	resXtxtScr = CreateScriptFromFile("resXtxtScr","resources/script/resXtxtScr.lua")
 	SetGuiObjectScript(resXtxt,resXtxtScr)
 	
 -- Create a text box showign the res for Y
-local resSep = CreateLabel(optionsGui,"resLabelSep",240, 200, "x")
+local resSep = CreateLabel(optionsGui,"resLabelY",250, 200, "x")
     SetLabelFont(resSep, NFont)
     
     

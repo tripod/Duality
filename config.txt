@@ -1,7 +1,7 @@
 windowSize 1200 800
 fullscreen FALSE
 multisamples 4
-textureAnisotropy 2
+textureAnisotropy 16
 textureCompress FALSE
 shadowMapSize 2048
 

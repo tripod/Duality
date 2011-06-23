@@ -50,6 +50,10 @@ while Run() == true do
 	    MoveActorLocal(cam, 12.0, 0.0, 0.0)
 	end
 	
+	if GetKeyState(KEY_SPACE) == DOWN then
+	    MoveActorLocal(cam, 0.0, 12.0, 0.0)
+	end
+	
 	if GetKeyState(KEY_ESC) == PRESSED then
 	   HideMouse( false)
 	   SetGuiObjectVisible(maingui, true )
@@ -59,7 +63,13 @@ while Run() == true do
 	
 	force = GetMouseForce()
 	RotateActor(cam, 0.0, 0.0, -force.x* 5.0)
-	RotateActorLocal(cam, -force.y*10.0, 0.0, 0.0)
+	RotateActorLocal(cam, -force.y*10.0, 0.0, 0.0)	
+	
+	yaw = GetActorRotation(cam).y
+	zaw = GetActorRotation(cam).z
+	xaw = GetActorRotation(cam).x
+	
+	print(xaw .. " | " .. yaw .. " | " .. zaw) 
 	
        
      end

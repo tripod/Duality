@@ -25,7 +25,10 @@ function Game.Load(level_pak)
   cam = GetSceneActiveCamera(scene)
   
   SetActorPhysics(cam, true)
-  SetActorShape(cam ,BOX)
+  SetActorShape(cam, BOX)
+  SetCameraFov(cam, 90)
+  SetActorRestitution(cam, 0.0)
+  SetActorMass(cam, 20)
   
   print("......... Entity Information............")
   print(GetSceneEntityCount(scene))

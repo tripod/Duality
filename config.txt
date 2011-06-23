@@ -1,4 +1,4 @@
-windowSize 1200 800
+windowSize 800 600
 fullscreen FALSE
 multisamples 4
 textureAnisotropy 16

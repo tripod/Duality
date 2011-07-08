@@ -15,4 +15,6 @@ If you have any of the following skills we would be interested in your help deve
 * Lua scripting skills.
 
 Even if you have none of these skills and would like to help anyway, that would be great, the more help we can get the better.
+Maybe you could even donate us a very cheap, server to host out website and forums.
+
 Please email, *mark@dotrb.net* or *mark@dualityfps.org*

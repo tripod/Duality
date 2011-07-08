@@ -1,8 +1,10 @@
+-- Play menu click on menu preload.
 PlaySound(menu_click, 0.5)
 
 optionsGui = CreateGui()
 
--- Create a font
+-- Create a font.
+-- TODO: Add a the font to a seprate file that only get s loaded once.
 local HFont = CreateFontFromFile("resources/DejaVuSans.ttf", 30)
 local NFont = CreateFontFromFile("resources/DejaVuSans.ttf", 20)
 
@@ -29,6 +31,7 @@ applyButton = CreateButton(optionsGui, "ApplyButton", 50, GetWindowHeight() - 25
 SetButtonOffTexture(applyButton, abtexoff)
 SetButtonOverTexture(applyButton,abtexover)
 SetButtonOnTexture(applyButton, abtexon)
+
 ---------------------------------------
 -- TODO: APPLY SCRIPT HERE
 ---------------------------------------
@@ -38,7 +41,7 @@ SetButtonOnTexture(applyButton, abtexon)
 obl = CreateLabel(optionsGui, "Options Label", 50 , 50, "Video Options:")
     SetLabelFont(obl, HFont)
 
--- Create the lable for the fillscreen menu
+-- Create the lable for the fullscreen menu
 local fullscreenLabel = CreateLabel(optionsGui,"resLabel",50, 150, "Fullscreen: ")
     SetLabelFont(fullscreenLabel, NFont)
 
@@ -70,7 +73,6 @@ local multiSampLabel = CreateLabel(optionsGui,"multiSampLab",50, 250, "Multisamp
     SetLabelFont(multiSampLabel, NFont)
 multiSamplesText = CreateTextField(optionsGui,"multiSamTxt", 250, 30 ,25, GetMultisamples())
 
-
-
-
+-- Once we finish loading the menu resources
+-- Load the GUI
 SetGui(optionsGui)
